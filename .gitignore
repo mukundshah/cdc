@@ -1,0 +1,40 @@
+# Compiled object files
+*.o
+*.so
+
+# Executables
+*.exe
+*.out
+
+# Build directories
+build
+bin
+obj
+
+# IDE files
+.idea
+.vscode
+!.vscode/settings.json
+
+# Dependency directories
+lib
+vendor
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# User-specific files
+*.swp
+*.swo
+
+# Python
+__pycache__
+*.py[cod]
+
+# Pytest
+.pytest_cache
+
+# OS-specific files
+.DS_Store
+Thumbs.db
