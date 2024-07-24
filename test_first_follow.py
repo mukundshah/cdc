@@ -3,7 +3,7 @@ import os
 import pytest
 
 # Load the shared library
-lib = ctypes.CDLL(os.path.abspath("./libfirst_follow_of_grammar.so"))
+lib = ctypes.CDLL(os.path.abspath("./libfirst_follow.so"))
 
 # Define function signatures
 lib.add_production.argtypes = [ctypes.c_char, ctypes.c_char_p]

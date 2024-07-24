@@ -1,18 +1,9 @@
+#include "first_follow.h"
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define MAX_PRODUCTIONS 100
-#define MAX_SYMBOLS 26
-#define MAX_RHS_LENGTH 20
-#define MAX_TERMINAL_LENGTH 10
-
-typedef struct {
-  char lhs;
-  char rhs[MAX_RHS_LENGTH];
-} Production;
 
 Production grammar[MAX_PRODUCTIONS];
 int num_productions = 0;
