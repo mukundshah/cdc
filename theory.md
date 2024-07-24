@@ -90,7 +90,17 @@ In this lab, we explored the importance of comments in programming and the diffe
 
 ## CONCLUSION
 
-# LAB 4: FIRST & FOLLOW OF GRAMMAR
+# LAB 4: LEXICAL ANALYZER
+
+## OBJECTIVES
+
+## THEORETICAL BACKGROUND
+
+## OUTPUTS
+
+## CONCLUSION
+
+# LAB 5: FIRST & FOLLOW OF GRAMMAR
 
 ## OBJECTIVES
 
@@ -130,17 +140,7 @@ In this lab, we explored the importance of comments in programming and the diffe
 
 ## CONCLUSION
 
-# LAB 8: Final CODE GENERATOR
-
-## OBJECTIVES
-
-## THEORETICAL BACKGROUND
-
-## OUTPUTS
-
-## CONCLUSION
-
-# LAB 9: PUTTING IT ALL TOGETHER
+# LAB 9: FINAL CODE GENERATOR
 
 ## OBJECTIVES
 
