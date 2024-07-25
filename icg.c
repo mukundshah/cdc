@@ -1,3 +1,9 @@
+/**
+ * @author  Mukund Shah
+ * @note Lab 8: Implement Intermediate Code Generation for a given expression.
+ * @file icg.c
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

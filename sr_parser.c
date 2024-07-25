@@ -1,3 +1,9 @@
+/**
+ * @author  Mukund Shah
+ * @note Lab 7: Implement a Shift-Reduce Parser for a given grammar.
+ * @file sr_parser.c
+ */
+
 #include <stdio.h>
 #include <string.h>
 

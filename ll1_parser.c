@@ -1,3 +1,9 @@
+/**
+ * @author  Mukund Shah
+ * @note Lab 6. Implement the LL(1) parser for the given grammar.
+ * @file ll1_parser.c
+ */
+
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
