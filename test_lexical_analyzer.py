@@ -1,5 +1,6 @@
 import ctypes
 import os
+
 import pytest
 
 # Load the shared library
@@ -9,9 +10,11 @@ lib = ctypes.CDLL(os.path.abspath("./liblexical_analyzer.so"))
 lib.analyze_input.argtypes = [ctypes.c_char_p]
 lib.analyze_input.restype = ctypes.c_char_p
 
+
 def analyze(input_str):
-    result = lib.analyze_input(input_str.encode('utf-8'))
-    return result.decode('utf-8')
+    result = lib.analyze_input(input_str.encode("utf-8"))
+    return result.decode("utf-8")
+
 
 def test_lexical_analyzer():
     input_str = "int main() { int x = 5 + 3; return 0; }"
@@ -35,11 +38,13 @@ Token: }          Type: OPERATOR
 """
     assert result == expected_output
 
+
 def test_keywords():
     keywords = ["int", "float", "char", "if", "else", "while", "for", "return"]
     for keyword in keywords:
         result = analyze(keyword)
         assert result == f"Token: {keyword:<10} Type: KEYWORD\n"
+
 
 def test_identifiers():
     identifiers = ["x", "y", "variable_name", "_underscore", "camelCase", "PascalCase"]
@@ -47,17 +52,20 @@ def test_identifiers():
         result = analyze(identifier)
         assert result == f"Token: {identifier:<10} Type: IDENTIFIER\n"
 
+
 def test_numbers():
     numbers = ["0", "123", "3.14", "0.123", "1000000"]
     for number in numbers:
         result = analyze(number)
         assert result == f"Token: {number:<10} Type: NUMBER\n"
 
+
 def test_operators():
     operators = ["+", "-", "*", "/", "=", "<", ">", "(", ")", "{", "}"]
     for operator in operators:
         result = analyze(operator)
         assert result == f"Token: {operator:<10} Type: OPERATOR\n"
+
 
 def test_mixed_input():
     input_str = "if (x < 10) { x = x + 1; }"
@@ -79,6 +87,7 @@ Token: }          Type: OPERATOR
 """
     assert result == expected_output
 
+
 def test_unknown_characters():
     input_str = "!@#$%^&*"
     result = analyze(input_str)
@@ -86,9 +95,11 @@ def test_unknown_characters():
     expected_output += "Token: *          Type: OPERATOR\n"
     assert result == expected_output
 
+
 def test_empty_input():
     result = analyze("")
     assert result == ""
+
 
 def test_long_input():
     input_str = "a" * 1000
@@ -106,6 +117,7 @@ def test_long_input():
         expected_output += f"Token: {'a' * remainder:<10} Type: IDENTIFIER\n"
 
     assert result == expected_output
+
 
 if __name__ == "__main__":
     pytest.main([__file__])
