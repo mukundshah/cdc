@@ -138,17 +138,16 @@ int main(int argc, char **argv) {
   }
   ter[sid] = '$';
   sid++;
-  printf("\n\t\t\t\t\t\t\t The LL(1) Parsing Table for the above grammer :-");
-  printf(
-      "\n\t\t\t\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n");
-  printf("\n\t\t\t============================================================="
-         "========================================================\n");
-  printf("\t\t\t\t|\t");
+  printf("\n\t\t\t\t The LL(1) Parsing Table for the above grammer :-");
+  printf("\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n");
+  printf("\n======="
+         "==\n");
+  printf("\t|\t");
   for (ap = 0; ap < sid; ap++) {
     printf("%c\t\t", ter[ap]);
   }
-  printf("\n\t\t\t============================================================="
-         "========================================================\n");
+  printf("\n======="
+         "==\n");
   char first_prod[count][sid];
   for (ap = 0; ap < count; ap++) {
     int destiny = 0;
@@ -262,7 +261,7 @@ int main(int argc, char **argv) {
     }
   }
   for (ap = 0; ap < land; ap++) {
-    printf("\t\t\t   %c\t|\t", table[ap][0]);
+    printf("   %c\t|\t", table[ap][0]);
     for (kay = 1; kay < (sid + 1); kay++) {
       if (table[ap][kay] == '!')
         printf("\t\t");
@@ -275,7 +274,7 @@ int main(int argc, char **argv) {
       }
     }
     printf("\n");
-    printf("\t\t\t-------------------------------------------------------------"
+    printf("-------------------------------------------------------------"
            "--------------------------------------------------------");
     printf("\n");
   }
@@ -283,28 +282,31 @@ int main(int argc, char **argv) {
   printf("\n\nPlease enter the desired INPUT STRING = ");
   char input[100];
   scanf("%s%c", input, &ch);
-  printf("\n\t\t\t\t\t========================================================="
-         "==================\n");
-  printf("\t\t\t\t\t\tStack\t\t\tInput\t\t\tAction");
-  printf("\n\t\t\t\t\t========================================================="
-         "==================\n");
+  printf("============================================="
+         "======================================\n");
+  printf("Stack\t\t\tInput\t\t\tAction");
+  printf("============================================="
+         "======================================\n");
   int i_ptr = 0, s_ptr = 1;
   char stack[100];
   stack[0] = '$';
   stack[1] = table[0][0];
   while (s_ptr != -1) {
-    printf("\t\t\t\t\t\t");
     int vamp = 0;
     for (vamp = 0; vamp <= s_ptr; vamp++) {
       printf("%c", stack[vamp]);
     }
+
     printf("\t\t\t");
+
     vamp = i_ptr;
     while (input[vamp] != '\0') {
       printf("%c", input[vamp]);
       vamp++;
     }
+
     printf("\t\t\t");
+
     char her = input[i_ptr];
     char him = stack[s_ptr];
     s_ptr--;
@@ -350,14 +352,14 @@ int main(int argc, char **argv) {
       }
     }
   }
-  printf("\n\t\t\t============================================================="
-         "==========================================================\n");
+  printf("\n==========================================="
+         "========================================\n");
   if (input[i_ptr] == '\0') {
-    printf("\t\t\t\t\t\t\t\tYOUR STRING HAS BEEN ACCEPTED !!\n");
+    printf("\t\t\tYOUR STRING HAS BEEN ACCEPTED !!\n");
   } else
-    printf("\n\t\t\t\t\t\t\t\tYOUR STRING HAS BEEN REJECTED !!\n");
-  printf("\t\t\t==============================================================="
-         "========================================================\n");
+    printf("\n\t\t\tYOUR STRING HAS BEEN REJECTED !!\n");
+  printf("============================================="
+         "======================================\n");
 }
 
 void follow(char c) {
