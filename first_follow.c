@@ -1,3 +1,9 @@
+/**
+ * @author  Mukund Shah
+ * @note Lab 5: Find the first and follow sets for a given grammar.
+ * @file first_follow.c
+ */
+
 #include "first_follow.h"
 #include <ctype.h>
 #include <stdbool.h>
@@ -5,8 +11,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-Production grammar[MAX_PRODUCTIONS];
 int num_productions = 0;
+Production grammar[MAX_PRODUCTIONS];
 
 char first_sets[MAX_SYMBOLS][MAX_RHS_LENGTH * MAX_PRODUCTIONS];
 int first_set_size[MAX_SYMBOLS];
@@ -246,22 +252,4 @@ void print_follow_sets() {
       printf(" }\n");
     }
   }
-}
-
-int main() {
-  // Example grammar
-  add_production('S', "ABC");
-  add_production('A', "aA");
-  add_production('A', "#");
-  add_production('B', "bB");
-  add_production('B', "#");
-  add_production('C', "c");
-
-  compute_first_sets();
-  print_first_sets();
-
-  compute_follow_sets();
-  print_follow_sets();
-
-  return 0;
 }

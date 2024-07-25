@@ -1,3 +1,9 @@
+/**
+ * @author  Mukund Shah
+ * @note Lab 3: Test whether or not the given string is a valid identifier.
+ * @file identifier_checker.c
+ */
+
 #include <stdbool.h>
 #include <stdio.h>
 
@@ -37,4 +43,12 @@ bool is_valid_identifier(const char *str) {
 // Function to be exposed for the shared library
 int check_identifier(const char *str) {
   return is_valid_identifier(str) ? 1 : 0;
+}
+
+int main() {
+  printf("%d\n", check_identifier("abc"));  // 1
+  printf("%d\n", check_identifier("123"));  // 0
+  printf("%d\n", check_identifier("_abc")); // 1
+  printf("%d\n", check_identifier("a b"));  // 0
+  return 0;
 }

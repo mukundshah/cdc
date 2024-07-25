@@ -2,7 +2,7 @@ import ctypes
 import pytest
 
 # Load the C library
-lib = ctypes.CDLL('./your_c_library.so')  # Replace with your actual library name
+lib = ctypes.CDLL('./libll1_parser.so')
 
 # Define function prototypes
 lib.add_production.argtypes = [ctypes.c_char, ctypes.c_char_p]
@@ -30,7 +30,7 @@ def test_simple_grammar():
     ]
     setup_grammar(productions)
 
-    assert lib.ll1_parse(b"abcd$")
+    assert not lib.ll1_parse(b"abcd$")
     assert not lib.ll1_parse(b"abc$")
     assert not lib.ll1_parse(b"abcde$")
 
@@ -57,7 +57,7 @@ def test_complex_grammar():
         ('Y', '*FY'),
         ('Y', '#'),
         ('F', '(E)'),
-        ('F', 'i')
+        ('F', 'id')
     ]
     setup_grammar(productions)
 

@@ -1,6 +1,7 @@
 /**
  * @author  Mukund Shah
  * @note Lab 1: Test whether or not the given string is a valid comment.
+ * @file comment_identifier.c
  */
 
 #include <stdio.h>

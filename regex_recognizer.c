@@ -1,6 +1,7 @@
 /**
  * @author  Mukund Shah
  * @note Lab 2: Recognize strings under the patterns a*, a*b+, abb using a DFA.
+ * @file regex_recognizer.c
  */
 
 #include <stdbool.h>

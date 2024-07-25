@@ -1,3 +1,9 @@
+/**
+ * @author  Mukund Shah
+ * @note Lab 5: Find the first and follow sets for a given grammar.
+ * @file first_follow.h
+ */
+
 #ifndef FIRST_FOLLOW_H
 #define FIRST_FOLLOW_H
 
@@ -12,6 +18,9 @@ typedef struct {
   char lhs;
   char rhs[MAX_RHS_LENGTH];
 } Production;
+
+extern Production grammar[MAX_PRODUCTIONS];
+extern int num_productions;
 
 void clear_grammar();
 void add_production(char lhs, const char *rhs);
